@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="973f7977-b52b-428b-8b72-a81e0b8499ad" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Attendee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TcsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testtcs.iml" afterDir="false" />
+    <list default="true" id="973f7977-b52b-428b-8b72-a81e0b8499ad" name="Changes" comment="First Commit">
+      <change afterPath="$PROJECT_DIR$/src/CafeCoffeeDay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TcsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TcsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,8 +74,17 @@
       <option name="presentableId" value="Default" />
       <updated>1667198804484</updated>
       <workItem from="1667198814314" duration="2578000" />
-      <workItem from="1667359653121" duration="9424000" />
+      <workItem from="1667359653121" duration="13900000" />
+      <workItem from="1667445989590" duration="12055000" />
     </task>
+    <task id="LOCAL-00001" summary="First Commit">
+      <created>1667369720915</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667369720915</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,5 +100,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
   </component>
 </project>
