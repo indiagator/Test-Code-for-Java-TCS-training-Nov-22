@@ -1,11 +1,22 @@
+package com.tcs.main;
 
-
+import com.tcs.side.Buyer;
+import com.tcs.side.CafeCoffeeDay;
+import com.tcs.side.Location;
+import com.tcs.side.User;
 
 /** This is the First Test Class that was written for TCS Java Training */
-public class TcsTest // this is the Application's Main class
+public class TcsTest extends User // this is the Application's Main class
 {
 
-    int someNum;
+    TcsTest(String username)
+    {
+        super(username);
+
+
+    }
+
+     int someNum; // This Declaration is inside the Class Body - [Instance Variable or Static Variable]
 
     //class body
 
@@ -25,10 +36,9 @@ public class TcsTest // this is the Application's Main class
 
     }
 
-    public static void main (String[] args) // will start from the main method (Entry Point)
+    public static void main (String... args) // will start from the main method (Entry Point)
     {
-
-        int sumNum3;
+        int sumNum3; // local variable
 
         myBlock:{ // Independent Block can have Label | Method | Class
             //..First Statement | Expression
@@ -73,7 +83,7 @@ public class TcsTest // this is the Application's Main class
             System.out.println("incremented value is " + incrementInt(78)); // Method Invocation
             System.out.println("decremented value is " + decrementInt(78)); // Method Invocation
 
-            System.out.println("result of conditional operation is " + conditionalOperator(-8, 56)); // Method Invocation
+            System.out.println("result of conditional operation is " + operateConditionally(-8, 56)); // Method Invocation
 
             System.out.println("result of conditional operation with switch is " + conditionalOperatorSwitch(8, 5, 'k')); // Method Invocation
 
@@ -85,9 +95,46 @@ public class TcsTest // this is the Application's Main class
             outlet1.setLocation("mg road, bengaluru"); // Initialization
 
 
+
+            System.out.println("com.tcs.side.Location of Outlet1 is: "+outlet1.getLocation());
+
             CafeCoffeeDay outlet2;
             outlet2 = new CafeCoffeeDay(100,1); // Instantiation and Partial Initialization
             outlet2.setLocation("marine drive, mumbai"); // Initialization
+
+            System.out.println("com.tcs.side.Location of Outlet2 is: "+outlet2.getLocation());
+
+            Location l1 = new Location(45,67);
+            Location l2 = new Location(89,34);
+
+
+
+            System.out.println("Distance between l1 and l2 is: "+calcDistance(l1,l2));
+
+            System.out.println("value of x for l1: "+l1.getX()+" Value of y for l1: "+l1.getY());
+            System.out.println("value of x for l2: "+l2.getX()+" Value of y for l2: "+l2.getY());
+
+            l1 = l2 ;
+
+            System.out.println("value of x for l1: "+l1.getX()+" Value of y for l1: "+l1.getY());
+
+            System.out.println("value of locationType is: "+ Location.locationType); // just like Math.sqrt();
+
+            System.out.println("value of locationType is: "+l1.locationType);
+            System.out.println("value of locationType is: "+l2.locationType);
+
+            l1.locationType = "ab";
+
+            Profile.updateProfile();
+
+            System.out.println("value of locationType is: "+Location.locationType); // just like Math.sqrt();
+            System.out.println("value of locationType is: "+l1.locationType);
+            System.out.println("value of locationType is: "+l2.locationType);
+
+
+
+            Buyer buyer1  = new Buyer("kingMan234");
+
 
 
 
@@ -97,15 +144,24 @@ public class TcsTest // this is the Application's Main class
 
     }
 
-    static int addTwoInts (int num1, int num2) // Method Definition
+    static int addTwoInts (int num1, int num2) // Method Definition | With Parameters
     {
         //Entry Point
         //Method Body
-
         int sumNum4;
 
         int result = num1 + num2;
         return result;  // Exit Point
+    }
+
+    static int add(int x, int y)
+    {
+        return x + y;
+    }
+
+    static float add(float x, float y)
+    {
+        return x + y;
     }
 
     static double addTwoFrcns (double num1, double num2)
@@ -135,7 +191,7 @@ public class TcsTest // this is the Application's Main class
         return --i; // increments the integer value by 1
     }
 
-    static int conditionalOperator(int num1, int num2)
+    static int operateConditionally(int num1, int num2)
     { // EntryPoint
 
         int result = 0;
@@ -225,6 +281,16 @@ public class TcsTest // this is the Application's Main class
 
         return tempValue; // Exit Point
     }
+
+    static double calcDistance(Location l1, Location l2)
+    {
+        double result = 0.0f;
+
+        result = Math.sqrt( (l1.getX() - l2.getX())*(l1.getX() - l2.getX()) + (l1.getY() - l2.getY())*(l1.getY() - l2.getY()) );
+
+        return result;
+    }
+
 
 
 

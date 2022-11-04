@@ -1,3 +1,5 @@
+package com.tcs.side;
+
 public class Attendee
 {
     public static void main(String[] args) // will start from the main method (Entry Point)
