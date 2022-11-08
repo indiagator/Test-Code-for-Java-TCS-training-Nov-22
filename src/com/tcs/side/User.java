@@ -15,47 +15,51 @@ public class User implements Profile { //SuperClass
         this.username = username;
     }
 
-    protected  String getUsername() {
+    public  String getUsername() {
         return username;
     }
 
-    protected void setUsername(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    protected void setPassword(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    protected void setEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    protected void setPhone(String phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    protected void setCity(String city) {
+    public void setCity(String city) {
         this.city = city;
     }
 
-    protected String getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    protected String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    protected String getCity() {
+    public String getCity() {
         return city;
     }
 
-    protected String getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    protected static void getData()
+    public static void getData()
+    {
+
+    }
+    public void getEncryptedPassword()
     {
 
     }

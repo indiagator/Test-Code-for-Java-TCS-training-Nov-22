@@ -1,9 +1,8 @@
 package com.tcs.main;
 
-import com.tcs.side.Buyer;
-import com.tcs.side.CafeCoffeeDay;
-import com.tcs.side.Location;
-import com.tcs.side.User;
+import com.tcs.side.*;
+
+import java.util.Scanner;
 
 /** This is the First Test Class that was written for TCS Java Training */
 public class TcsTest extends User // this is the Application's Main class
@@ -125,6 +124,7 @@ public class TcsTest extends User // this is the Application's Main class
 
             l1.locationType = "ab";
 
+
             Profile.updateProfile();
 
             System.out.println("value of locationType is: "+Location.locationType); // just like Math.sqrt();
@@ -135,11 +135,66 @@ public class TcsTest extends User // this is the Application's Main class
 
             Buyer buyer1  = new Buyer("kingMan234");
 
+            Admin admin1 = new Admin("Mohan345");
 
+            Object obj1 = new Admin("someUsername");
+            Object obj2 = new User("someUsername");
+            Object obj3 = new Buyer("someOtherUser");
 
+            Profile profile1 = new User("someUSernew");
+            Profile profile2 = new Admin("kinguser");
 
+            String userAnimalInput="";
+
+            Animal myAnimal = null;
+            Scanner animalScanner = new Scanner(System.in);
+            System.out.println("Which Animal do you want to create? : ");
+            userAnimalInput = animalScanner.next(); // read another line
+
+            switch (userAnimalInput)
+            {
+                case "dog" : myAnimal = new Dog(); break;
+                case "cat" : myAnimal = new Cat(); break;
+                case "cow" : myAnimal = new Cow(); break;
+                case "goat" : myAnimal = new Goat(); break;
+                case "lion" : myAnimal = new Lion(); break;
+                case "hyena" : myAnimal = new Hyena(); break;
+                default: myAnimal = new Animal();break;
+            }
+
+            // Animal myAnimal = new Hyena(); // Polymorphism | HardCoding
+
+            System.out.println("The Animal Says: "+myAnimal.speak());
+            System.out.println("Will the Animal Obey: "+myAnimal.willYouObey());
 
         }
+
+        int i = 78;
+        Integer iObj = new Integer(78);
+        Float fObj = iObj.floatValue(); // new Float(78.0) - Autoboxing
+        float f = fObj; // Unboxing
+
+        Character cObj = 'c'; // Autoboxing
+        char c = cObj.charValue(); // Unboxing
+
+        Boolean bObj = true; // Autoboxing
+        boolean b = bObj;  // Unboxing
+
+        System.out.println("Enter a number :" );
+        Scanner numScanner = new Scanner(System.in);
+        String num1 = numScanner.next();
+
+        System.out.println("Enter another number :" );
+        String num2 = numScanner.next();
+
+        int pnum1 = Integer.parseInt(num1);
+        int pnum2 = Integer.parseInt(num2);
+
+        System.out.println("sum of these two numbers is :"+ (pnum1+pnum2)); // string concatenation
+
+        String testString = new String("Test String");
+        String testString2 = "test string 2"; // abbreviated
+
 
 
     }
