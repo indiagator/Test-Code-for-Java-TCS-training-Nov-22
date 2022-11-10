@@ -2,6 +2,7 @@ package com.tcs.main;
 
 import com.tcs.side.*;
 
+import java.io.*;
 import java.util.Scanner;
 
 /** This is the First Test Class that was written for TCS Java Training */
@@ -35,7 +36,7 @@ public class TcsTest extends User // this is the Application's Main class
 
     }
 
-    public static void main (String... args) // will start from the main method (Entry Point)
+    public static void main (String... args) throws IOException // will start from the main method (Entry Point)
     {
         int sumNum3; // local variable
 
@@ -167,6 +168,9 @@ public class TcsTest extends User // this is the Application's Main class
             System.out.println("The Animal Says: "+myAnimal.speak());
             System.out.println("Will the Animal Obey: "+myAnimal.willYouObey());
 
+            Exception exception = new Exception();
+            Error error = new Error();
+            RuntimeException runtimeException = new RuntimeException();
         }
 
         int i = 78;
@@ -184,6 +188,7 @@ public class TcsTest extends User // this is the Application's Main class
         Scanner numScanner = new Scanner(System.in);
         String num1 = numScanner.next();
 
+
         System.out.println("Enter another number :" );
         String num2 = numScanner.next();
 
@@ -195,8 +200,52 @@ public class TcsTest extends User // this is the Application's Main class
         String testString = new String("Test String");
         String testString2 = "test string 2"; // abbreviated
 
+        String s1 = "Hello World";
+        String s2 = "Hello TCS";
+        String s3 = s1 + s2;
+
+        s3.length();
+
+        System.out.println(s3.substring(6,16));
+
+        int num7 = 678;
+
+        String numS = String.valueOf(num7); // convert any primitive data to string
+
+        Float.valueOf(numS); // conversion from String to Numeric Data
+
+        StringBuilder sb1 = new StringBuilder("Hello World");
+        sb1.append(" This is a new day");
+
+        String inum = "good morning";
+        String jnum = "good morning";
+
+        Location testl1 = new Location(2,3);
+        Location testl2 = new Location(2,3);
+
+        inum.equals(jnum);
+
+        if( testl1.equals(testl2) )
+        {
+            System.out.println("The two numbers are equal with hashes "+testl1.hashCode()+" "+testl2.hashCode());
+        }
+        else
+        {
+            System.out.println("The two numbers are unequal with hashes "+testl1.hashCode()+" "+testl2.hashCode());
+        }
 
 
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
+        bufferedWriter.write("This is from the Buffered Writer");
+        bufferedWriter.flush();
+
+        System.out.println();
+
+        PrintWriter writer = new PrintWriter(new BufferedOutputStream(System.out));
+        writer.write("some string from the Print Writer");
+        writer.flush();
     }
 
     static int addTwoInts (int num1, int num2) // Method Definition | With Parameters

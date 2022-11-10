@@ -1,6 +1,8 @@
 package com.tcs.side;
 
 
+import java.util.Objects;
+
 public class Location {
 
 
@@ -31,5 +33,21 @@ public class Location {
 
     public float getY() {
         return y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Location location = (Location) o;
+
+        if (Float.compare(location.x, x) != 0) return false;
+        return Float.compare(location.y, y) == 0;
     }
 }
