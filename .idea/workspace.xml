@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="973f7977-b52b-428b-8b72-a81e0b8499ad" name="Changes" comment="First Commit">
+      <change afterPath="$PROJECT_DIR$/src/com/tcs/side/Number.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tcs/side/TestThreadExtended.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tcs/side/ThreadRunnable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tcs/main/TcsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tcs/main/TcsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tcs/side/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tcs/side/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tcs/side/Attendee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tcs/side/TestThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,7 @@
   </component>
   <component name="RunManager" selected="Application.TcsTestConf">
     <configuration name="TcsTestConf" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.tcs.side.Attendee" />
+      <option name="MAIN_CLASS_NAME" value="com.tcs.side.TestThread" />
       <module name="testtcs" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -92,7 +94,7 @@
       <workItem from="1667771542386" duration="13579000" />
       <workItem from="1667878104566" duration="7270000" />
       <workItem from="1667964253481" duration="2011000" />
-      <workItem from="1668050070587" duration="630000" />
+      <workItem from="1668050070587" duration="13028000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1667369720915</created>
