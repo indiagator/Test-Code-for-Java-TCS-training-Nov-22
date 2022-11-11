@@ -25,7 +25,7 @@ public class TestThreadExtended extends Thread
         {
             while (cntr < 15) {
 
-                n1.doI();
+                n1.doI(threadName);
 
                 try {
                     Thread.sleep(1000);

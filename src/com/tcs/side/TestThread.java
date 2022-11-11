@@ -57,6 +57,9 @@ public class TestThread
         Thread t3 = new TestThreadExtended("THREAD3",father, n1, n2);
         t3.start();
 
+        Thread t4 = new Thread(new ThreadRunnable("THREAD4",father, n1, n2));
+        t4.start();
+
 
 
         //int interruptCntr = 0;
@@ -76,9 +79,10 @@ public class TestThread
             //}
        // }
 
-        t1.join();
+        t1.join(); // main thread sleeps till t1 thread is not terminated
         t2.join();
         t3.join();
+        t4.join();
         //father.getSharedDataT1().join();
         System.out.println("MAIN THREAD is terminated!");
         //main thread will be terminated!

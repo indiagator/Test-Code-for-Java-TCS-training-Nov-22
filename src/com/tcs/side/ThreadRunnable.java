@@ -38,14 +38,15 @@ public class ThreadRunnable implements Runnable {
             while (cntr < 15) // infinite loop
             {
 
-                n1.doI();
+                n1.checkI();
+                n1.doI(threadName);
+
+               // Object Superclass Godfather
 
                 if(Thread.interrupted()) // interrupt flag's value is returned
                 {
                     //Code for Interrupt Handling
                 }
-
-
 
                 try
                 {
@@ -54,7 +55,7 @@ public class ThreadRunnable implements Runnable {
                 catch (InterruptedException e)
                 {
                     //Code for Interrupt Handling
-                    throw new RuntimeException(e);
+                    System.out.println(threadName+" was interrupted "+e.getMessage());
                 }
 
                 cntr++;
@@ -64,6 +65,10 @@ public class ThreadRunnable implements Runnable {
         catch (RuntimeException e)
         {
             System.out.println(threadName+" was interrupted "+e.getMessage());
+        }
+        catch (InterruptedException e)
+        {
+            System.out.println(e.getMessage());
         }
 
     }

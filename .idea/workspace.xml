@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="973f7977-b52b-428b-8b72-a81e0b8499ad" name="Changes" comment="First Commit">
-      <change afterPath="$PROJECT_DIR$/src/com/tcs/side/Number.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tcs/side/TestThreadExtended.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tcs/side/ThreadRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tcs/main/TestRegEx.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tcs/side/Attendee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tcs/side/TestThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tcs/side/Number.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tcs/side/Number.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tcs/side/TestThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tcs/side/TestThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tcs/side/TestThreadExtended.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tcs/side/TestThreadExtended.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tcs/side/ThreadRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tcs/side/ThreadRunnable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +56,7 @@
       <recent name="com.tcs.side" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TcsTestConf">
+  <component name="RunManager" selected="Application.regexCong">
     <configuration name="TcsTestConf" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.tcs.side.TestThread" />
       <module name="testtcs" />
@@ -71,8 +72,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="regexCong" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.tcs.main.TestRegEx" />
+      <module name="testtcs" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.TcsTestConf" />
+      <item itemvalue="Application.regexCong" />
       <item itemvalue="Application.TcsTestFirstConf" />
     </list>
   </component>
@@ -94,7 +103,8 @@
       <workItem from="1667771542386" duration="13579000" />
       <workItem from="1667878104566" duration="7270000" />
       <workItem from="1667964253481" duration="2011000" />
-      <workItem from="1668050070587" duration="13028000" />
+      <workItem from="1668050070587" duration="13264000" />
+      <workItem from="1668117520329" duration="6875000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1667369720915</created>
