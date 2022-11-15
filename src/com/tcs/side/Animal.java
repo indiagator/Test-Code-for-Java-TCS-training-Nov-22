@@ -13,4 +13,19 @@ public class Animal implements Vocal, Control {
     public boolean willYouObey() {
         return false;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Animal animal = (Animal) o;
+
+        return numberoflimbs == animal.numberoflimbs;
+    }
+
+    @Override
+    public int hashCode() {
+        return numberoflimbs;
+    }
 }

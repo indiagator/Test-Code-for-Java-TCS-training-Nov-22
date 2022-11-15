@@ -1,6 +1,6 @@
 package com.tcs.main;
 
-public class Wallet {
+public class Wallet implements MyInterface { // Wallet is IMPLEMENTATION and MyInterface is the INTERFACE
 
     int balance;
 
@@ -15,5 +15,15 @@ public class Wallet {
 
     public int getBalance() {
         return balance;
+    }
+
+    @Override
+    public void sort() {
+
+    }
+
+    @Override
+    public Month[] list() {
+        return new Month[0];
     }
 }
