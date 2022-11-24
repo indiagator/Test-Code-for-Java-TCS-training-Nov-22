@@ -4,6 +4,7 @@ import com.tcs.side.Vocal;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.stream.Collectors;
 
 public class TestCollections
 {
@@ -148,21 +149,42 @@ public class TestCollections
         Map<Month,List<Double>> delhiTempMap = new HashMap<>();
 
         List<Double> tempList = new ArrayList<>();
+
         tempList.add(3.0);
         tempList.add(5.0);
         delhiTempMap.put(Month.DECEMBER,tempList);
-        delhiTempMap.put(Month.DECEMBER,tempList);
-        delhiTempMap.put(Month.MARCH,tempList);
-        delhiTempMap.put(Month.JUNE,tempList);
-        delhiTempMap.put(Month.SEPTEMBER,tempList);
-
-        System.out.println("Temperature in Delhi in "+Month.DECEMBER+" is "+delhiTempMap.get(Month.DECEMBER));
 
 
+        List<Double> tempList1 = new ArrayList<>();
+        tempList1.add(3.0);
+        tempList1.add(5.0);
+        delhiTempMap.put(Month.DECEMBER,tempList1);
 
 
+        List<Double> tempList2 = new ArrayList<>();
+        tempList2.add(18.0);
+        tempList2.add(28.0);
+        delhiTempMap.put(Month.MARCH,tempList2);
 
 
+        List<Double> tempList3 = new ArrayList<>();
+        tempList3.add(32.0);
+        tempList3.add(42.0);
+        delhiTempMap.put(Month.JUNE,tempList3);
+
+        List<Double> tempList4 = new ArrayList<>();
+        tempList4.add(12.0);
+        tempList4.add(25.0);
+        delhiTempMap.put(Month.SEPTEMBER,tempList4);
+
+        //System.out.println("Temperature in Delhi in "+Month.DECEMBER+" is "+delhiTempMap.get(Month.DECEMBER));
+
+        Set<Map.Entry<Month,List<Double>>> entrySet = delhiTempMap.entrySet();
+       // entrySet.stream().forEach(monthListEntry -> System.out.println(monthListEntry.getValue()));
+
+        Set<Map.Entry<Month,List<Double>>> filteredEntries = entrySet.stream().filter(monthListEntry -> monthListEntry.getValue().get(1).compareTo(40.0) > 0 ).collect(Collectors.toSet());
+
+        filteredEntries.forEach(monthListEntry -> System.out.println("Month with Max Temp greater than 40.0 : "+monthListEntry.getKey()));
 
     }
 }

@@ -1,12 +1,13 @@
 package com.tcs.side;
 
-public class Buyer extends User {
+import com.tcs.main.Wallet;
 
+public class Buyer extends User
+{
     public Buyer(String username)
     {
         super(username);
 
     }
-
-
+    private Wallet wallet;
 }

@@ -2,6 +2,8 @@ package com.tcs.side;
 
 import com.tcs.main.Profile;
 
+import java.util.List;
+
 public class User implements Profile { //SuperClass
 
     String username;
@@ -9,6 +11,8 @@ public class User implements Profile { //SuperClass
     String email;
     String phone;
     String city;
+
+    List<String> freinds;
 
     public User(String username)
     {

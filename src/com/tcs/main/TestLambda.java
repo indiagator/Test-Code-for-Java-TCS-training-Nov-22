@@ -109,8 +109,6 @@ public class TestLambda {
 
         System.out.println("****************************");
 
-
-
         filterednumbers = numbers.stream().filter(usualFunction.apply(BigDecimal.valueOf(100.0))).collect(Collectors.toList());
 
         //numbers.forEach(e-> System.out.println(e));
