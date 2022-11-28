@@ -56,4 +56,17 @@ public class OrderDAO
         return orderList;
     }
 
+    public void deleteOrder(String orderId) throws SQLException
+    {
+        DbConnection connection = new DbConnection();
+
+        String delQuery = "DELETE FROM orders WHERE orderid='"+orderId+"'";
+
+        Statement statement = connection.getDbconnection().createStatement();
+        statement.execute(delQuery);
+
+        connection.getDbconnection().close();
+
+    }
+
 }

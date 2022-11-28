@@ -64,14 +64,8 @@ public class ProductOffer
     }
 
     @Override
-    public String toString() {
-        return "{" +
-                "offerId='" + offerId + '\'' +
-                ", hscode='" + hscode + '\'' +
-                ", offerName='" + offerName + '\'' +
-                ", qty=" + qty +
-                ", unit='" + unit + '\'' +
-                ", unitprice=" + unitprice +
-                '}';
+    public String toString()
+    {
+        return "OFFERNAME: "+offerName+"    UNIT: "+unit+"  QTY: "+qty+ "   UNITPRICE: "+unitprice;
     }
 }

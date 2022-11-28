@@ -6,9 +6,7 @@ import com.tcs.side.ProductOffer;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class TestDB
 {
@@ -20,29 +18,17 @@ public class TestDB
         ProductOfferDAO offerDAO = new ProductOfferDAO();
         offerList = offerDAO.fetchOffers();
 
-
-        System.out.println("    SELLER          OFFER                      HSCODE      UNIT         UNIT-PRICE        QTY");
-
-        int offerCntr = 1;
-        for (ProductOffer offer : offerList)
-        {
-            System.out.println(offerCntr+". "+offer.getUsername()+
-                    "           "+offer.getOfferName()+"" +
-                    "     "+offer.getHscode()+"" +
-                    "       "+offer.getUnit()+
-                    "           "+offer.getUnitprice()+
-                    "           "+offer.getQty());
-            offerCntr++;
-        }
+        printAllOffers(offerList);
 
         String orderInput;
-        do
+
+        while(true)
         {
             System.out.println("****************");
+            System.out.println("Place New Order (1) | Delete an Offer (2) | Update an Offer (3) ? ");
 
-            System.out.println("Place New Order (y/n)?");
             Scanner in = new Scanner(System.in);
-            orderInput = in.next();
+            int offerInput = in.nextInt();
 
             System.out.print("Please enter the Order Serial Number: ");
             int orderSerial = in.nextInt();
@@ -61,7 +47,7 @@ public class TestDB
 
 
 
-        }while(orderInput.equals("y"));
+        }
 
     }
 
@@ -75,53 +61,97 @@ public class TestDB
         ProductOfferDAO offerDAO = new ProductOfferDAO();
         offerList = offerDAO.fetchOffers(username);
 
+        int offerCntr = 1;
         for (  ProductOffer offer: offerList  )
         {
-            System.out.println(offer);
+            System.out.println(offerCntr+". "+offer);
+            offerCntr++;
         }
 
-
-        String offerInput;
-        do
+        while(true)
         {
             System.out.println("****************");
+            System.out.println("Create New Offer (1) | Delete an Offer (2) | Update an Offer (3) ? ");
 
-            System.out.println("Create New Offer (y/n)?");
             Scanner in = new Scanner(System.in);
-            offerInput = in.next();
+            int offerInput = in.nextInt();
 
-            System.out.print("HSCODE: ");
-            String hscode = in.next();
-            System.out.print("OFFERNAME: ");
-            String offerName = in.next();
-            System.out.print("QTY: ");
-            String qty = in.next();
-            System.out.print("UNIT: ");
-            String unit = in.next();
-            System.out.print("UNITPRICE: ");
-            String unitPrice = in.next();
+            if(offerInput == 1)
+            {
+                System.out.print("HSCODE: ");
+                String hscode = in.next();
+                System.out.print("OFFERNAME: ");
+                String offerName = in.next();
+                System.out.print("QTY: ");
+                String qty = in.next();
+                System.out.print("UNIT: ");
+                String unit = in.next();
+                System.out.print("UNITPRICE: ");
+                String unitPrice = in.next();
 
-            int random = ((int) (Math.random()*10000.0));
-            String offerId = String.valueOf(random);
+                int random = ((int) (Math.random()*10000.0));
+                String offerId = String.valueOf(random);
 
-            ProductOffer productOffer = new ProductOffer(offerId,username);
-            productOffer.setHscode(hscode);
-            productOffer.setOfferName(offerName);
-            productOffer.setQty(Integer.parseInt(qty));
-            productOffer.setUnit(unit);
-            productOffer.setUnitprice(Float.parseFloat(unitPrice));
+                ProductOffer productOffer = new ProductOffer(offerId,username);
+                productOffer.setHscode(hscode);
+                productOffer.setOfferName(offerName);
+                productOffer.setQty(Integer.parseInt(qty));
+                productOffer.setUnit(unit);
+                productOffer.setUnitprice(Float.parseFloat(unitPrice));
 
-            ProductOfferDAO productOfferDAO = new ProductOfferDAO();
-            productOfferDAO.createOffer(productOffer);
-        }while(offerInput.equals("y"));
+                ProductOfferDAO productOfferDAO = new ProductOfferDAO();
+                productOfferDAO.createOffer(productOffer);
+            }
+            else if (offerInput == 2)
+            {
+
+                System.out.println("Please enter the Offer Serial Number to be Deleted: ");
+               int delserail = in.nextInt();
+               String delOfferId = offerList.get(delserail-1).getOfferId();
+               offerDAO.deleteOffer(delOfferId);
+
+            }
+
+
+        }
     }
 
     void redirectAdminDashboard(String username) throws SQLException
     {
         System.out.println("******** ADMIN DASHBOARD FOR "+username+" ********");
 
+
+
+        AdminDAO adminDAO = new AdminDAO();
+
+        System.out.println("TOTAL NUMBER OF OFFERS: "+ adminDAO.getOfferCount());
+        Map<String,Integer> sellerOfferMap = adminDAO.getOfferCountSellerwiseConcise();
+        int sellerCntr = 1;
+        for ( Map.Entry entry: sellerOfferMap.entrySet())
+        {
+            System.out.println("    "+sellerCntr+". "+entry.getKey()+" TOTAL OFFERS: "+entry.getValue());
+            sellerCntr++;
+        }
+
+        System.out.println("TOTAL NUMBER OF ORDERS: "+ adminDAO.getOrderCount());
+        Map<String,Integer> buyerOfferMap = adminDAO.getOrderCountBuyerwiseConcise();
+        int buyerCntr = 1;
+        for ( Map.Entry entry: buyerOfferMap.entrySet())
+        {
+            System.out.println("    "+buyerCntr+". "+entry.getKey()+" TOTAL ORDERS: "+entry.getValue());
+            buyerCntr++;
+        }
+
+
+
+
+    }
+
+    void printAllOffers(List<ProductOffer> offerList) throws SQLException
+    {
+
         ProductOfferDAO offerDAO = new ProductOfferDAO();
-        List<ProductOffer> offerList = offerDAO.fetchOffers();
+
 
         System.out.println("******** LIST OF OFFERS ********");
 
@@ -139,6 +169,11 @@ public class TestDB
             offerCntr++;
         }
 
+    }
+
+    void printAllOrders() throws SQLException {
+
+
         System.out.println("******** LIST OF ORDERS ********");
 
         OrderDAO orderDAO = new OrderDAO();
@@ -147,6 +182,7 @@ public class TestDB
         orderList.forEach(order -> System.out.println(order));
 
     }
+
 
     void showOrders(String username)
     {

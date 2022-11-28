@@ -107,4 +107,17 @@ public class ProductOfferDAO
         connection.getDbconnection().close();
         return offerList;
     }
+
+    public void deleteOffer(String offerId) throws SQLException
+    {
+        DbConnection connection = new DbConnection();
+
+        String delQuery = "DELETE FROM productoffers WHERE offerid='"+offerId+"'";
+
+        Statement statement = connection.getDbconnection().createStatement();
+        statement.execute(delQuery);
+
+        connection.getDbconnection().close();
+
+    }
 }
